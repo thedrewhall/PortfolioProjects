@@ -1,4 +1,5 @@
 --Showing data in individual countries
+
 SELECT *
 FROM PortfolioProject..['CovidDeaths']
 Where continent is not null
@@ -13,7 +14,9 @@ order by 1,2
 
 
 --Looking at total cases vs total deaths
+
 --Shows likelihood of dying from COVID in United States over time
+
 Select Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 From PortfolioProject..['CovidDeaths']
 where Location like '%states%'
@@ -22,7 +25,9 @@ order by 1,2
 
 
 --Looking at total cases vs population
+
 --Shows total percentage of population in United States has had COVID
+
 Select Location, date, total_cases, population, (total_cases/population)*100 as CasePercentage
 From PortfolioProject..['CovidDeaths']
 where Location like '%states%'
