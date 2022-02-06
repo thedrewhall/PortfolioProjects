@@ -9,3 +9,7 @@ https://ourworldindata.org/covid-deaths
 
 # This is an ongoing project
 I seek to polish and expand as there is so much data available and different relationships to look at
+
+
+02/05/22
+Updated code to proper casing
