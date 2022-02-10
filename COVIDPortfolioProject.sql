@@ -6,13 +6,6 @@ WHERE continent IS NOT null
 ORDER BY 3,4
 ;
 
-SELECT location, date, total_cases, new_cases, total_deaths, population
-FROM PortfolioProject..['CovidDeaths']
-WHERE continent IS NOT null
-ORDER by 1,2
-;
-
-
 --Looking at total cases vs total deaths
 
 --Shows likelihood of dying from COVID in United States over time
@@ -194,7 +187,7 @@ FROM #PercentPopulationVaccinated
 
 --Creating View to store data for later visualizations
 
-CREATE View PercentPopulatonVaccinated AS
+CREATE VIEW PercentPopulatonVaccinated AS
 SELECT dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int, vac.new_vaccinations)) OVER (Partition BY dea.location ORDER BY dea.location, dea.date) AS VaccinatedToDate
 FROM PortfolioProject..['CovidDeaths'] dea
